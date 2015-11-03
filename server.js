@@ -4,6 +4,8 @@
 const path = require('path');
 const express = require('express');
 const ua = require('express-ua');
+const stylus = require('stylus');
+const autoprefixer = require('autoprefixer-stylus');
 
 const server = express();
 const port = process.env.PORT || 5000;
@@ -17,12 +19,23 @@ server.set('views', path.join(__dirname, 'client'));
 server.set('view engine', 'jade');
 
 // express middleware
+server.use(stylus.middleware({
+  src: __dirname + '/client',
+  dest: __dirname + '/public/css',
+  compile: (str, path) => {
+    return stylus(str)
+      .use(autoprefixer())    // autoprefixer
+      .set('filename', path)  // @import
+      .set('compress', true)  // compress
+  }
+}));
 server.use(express.static(path.join(__dirname, 'public')));
 server.use(ua);
 
 server.get('/', (req, res) => {
   res.render('index', {
-    title: 'H5 开户',
+    title: 'My APP',
+    desc: 'My APP build with framework7.',
     ios: req.ua.os === 'iOS'
   });
 });

@@ -1,0 +1,17 @@
+/*
+ * Includes mixins and placeholders
+ */
+
+size()
+  if length(arguments) == 1
+    width: arguments[0]
+    height: arguments[0]
+  else
+    width: arguments[0]
+    height: arguments[1]
+
+$center
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
