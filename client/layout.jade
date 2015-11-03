@@ -1,0 +1,34 @@
+doctype html
+html
+  head
+  meta(charset='utf-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no')
+  meta(name='apple-mobile-web-app-capable', content='yes')
+  meta(name='apple-mobile-web-app-status-bar-style', content='black-translucent')
+  meta(name='description', content='#{description}')
+  title= title
+  - if (ios)
+    link(rel='stylesheet', href='framework7/css/framework7.ios.min.css')
+    link(rel='stylesheet', href='framework7/css/framework7.ios.colors.min.css')
+  - else
+    link(rel='stylesheet', href='framework7/css/framework7.material.min.css')
+    link(rel='stylesheet', href='framework7/css/framework7.material.colors.min.css')
+
+  body
+    .statusbar-overlay
+    .views
+      .view.view-main.navbar-through
+        .navbar.navbar-hidden
+          .navbar-inner
+            .center.sliding= title
+
+        .pages
+          .page.no-navbar
+            .page-content
+              .pageloader
+                span.preloader
+
+    block component
+
+    script(src='framework7/js/framework7.min.js')
+    script(src='js/app.js')
