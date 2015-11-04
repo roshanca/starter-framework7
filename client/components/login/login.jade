@@ -1,0 +1,17 @@
+mixin navbar
+  .navbar
+    .navbar-inner
+      .left.sliding
+        a.back.icon-only(href='#')
+          i.icon.icon-back
+      .center.sliding Welcome
+
+template#login
+  if (ios)
+    +navbar
+
+  .page(data-page="login")
+    if (!ios)
+      +navbar
+    .page-content#loginContent
+      login-component

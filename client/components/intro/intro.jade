@@ -1,0 +1,15 @@
+mixin navbar
+  .navbar
+    .navbar-inner
+      .center.sliding Intro
+
+template#intro
+  if (ios)
+    +navbar
+
+  .page(data-page='intro')
+    if (!ios)
+      +navbar
+    .page-content
+      .content-block
+        a#link(href='#' @click='redirect') Login Page

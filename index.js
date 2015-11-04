@@ -15,16 +15,6 @@ const browserify = require('browserify-middleware');
  */
 const app = express();
 
-// get correct work environment: test, production or development
-if ('test' === process.env.NODE_ENV) {
-  app.set('env', 'test');
-}
-else if ('production' === process.env.NODE_ENV) {
-  app.set('env', 'production');
-}
-
-let development = app.get('env') === 'development';
-
 // view engine setup
 app.set('views', path.join(__dirname, 'client'));
 app.set('view engine', 'jade');
@@ -37,11 +27,10 @@ app.use(stylus.middleware({
     return stylus(str)
       .use(autoprefixer())    // autoprefixer
       .set('filename', path)  // @import
-      .set('compress', development ? false : true)  // compress
   }
 }));
 app.use('/js', browserify(path.join(__dirname, 'client'), {
-  transform: [["babelify", { "presets": ["es2015"] }]]
+  transform: [['babelify', { 'presets': ['es2015'] }]]
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(ua);
