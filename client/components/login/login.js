@@ -1,6 +1,7 @@
 'use strict';
 
 const Vue = require('vue');
+const http = require('../../http');
 const loginTemplate = require('./login.tpl');
 const emailRE = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -40,7 +41,14 @@ module.exports = {
           if (!this.isValid) {
             app.alert('Your email or password is incorrect.');
           } else {
-            app.showIndicator();
+            const postData = {
+              account: this.user.email,
+              password: this.user.password
+            };
+
+            http.post('/api/login', postData, (data) => {
+              app.alert('Login Successful!');
+            });
           }
         }
       }

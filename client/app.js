@@ -23,6 +23,4 @@ window.mainView = app.addView('.view-main', {
 
 Router.init();
 
-mainView.router.load({
-  content: $$('template#intro').html()
-});
+mainView.router.reloadContent($$('template#intro').html());
