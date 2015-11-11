@@ -9,17 +9,23 @@ const ua = require('express-ua');
 const stylus = require('stylus');
 const autoprefixer = require('autoprefixer-stylus');
 const browserify = require('browserify-middleware');
+const bodyParser = require('body-parser');
 
 /**
  * Express app instance.
  */
 const app = express();
 
+// api
+const api = require('./routes/api');
+
 // view engine setup
 app.set('views', path.join(__dirname, 'client'));
 app.set('view engine', 'jade');
 
 // express middleware
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(stylus.middleware({
   src: __dirname + '/client',
   dest: __dirname + '/public/css',
@@ -34,6 +40,7 @@ app.use('/js', browserify(path.join(__dirname, 'client'), {
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(ua);
+app.use('/api', api);
 
 app.get('/', (req, res) => {
   res.render('index', {

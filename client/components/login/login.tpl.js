@@ -30,6 +30,6 @@ module.exports = `
   </ul>
 </div>
 <div class="content-block">
-  <a href="#" class="button button-big button-fill" @click="login">Login</a>
+  <a href="#" class="button button-big button-fill color-green" @click="login">Sign In</a>
 </div>
 `;
