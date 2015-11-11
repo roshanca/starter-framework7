@@ -47,7 +47,10 @@ module.exports = {
             };
 
             http.post('/api/login', postData, (data) => {
-              app.alert('Login Successful!');
+              mainView.router.load({
+                content: $$('template#profile').html(),
+                query: {email: this.user.email}
+              });
             });
           }
         }

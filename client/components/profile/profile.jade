@@ -1,0 +1,14 @@
+mixin navbar
+  .navbar
+    .navbar-inner
+      .center.sliding Profile
+
+template#profile
+  if (ios)
+    +navbar
+
+  .page(data-page='profile')
+    if (!ios)
+      +navbar
+    .page-content#profileContent
+      profile-component
