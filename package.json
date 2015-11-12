@@ -1,6 +1,6 @@
 {
   "name": "starter-framework7",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A starter project structure for framework7 app",
   "main": "index.js",
   "author": "roshanca <wwj1983@gmail.com>",
