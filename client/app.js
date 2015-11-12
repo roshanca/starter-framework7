@@ -11,16 +11,20 @@ if (!device.ios) {
   $$('.view .navbar').prependTo('.view .page');
 }
 
+// initialize framework7 app
 window.app = new Framework7({
   material: device.ios ? false : true,
   modalTitle: 'System'
 });
 
+// initialized main view of app
 window.mainView = app.addView('.view-main', {
   dynamicNavbar: true,
   preloadPreviousPage: false
 });
 
+// initialized router
 Router.init();
 
+// the first page to load
 mainView.router.reloadContent($$('template#intro').html());
