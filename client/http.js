@@ -9,11 +9,9 @@ const PRELOAD_TIMEOUT = 1000;
 // error messages collection
 const MSG = {
   TIMEOUT: 'OOPS! Request timeout.',
-  SERVER_ERROR: 'Server Error'
+  NETWORK_ERROR: 'Network Error!',
+  SERVER_ERROR: 'Server Error!'
 };
-
-// instance of Http Class
-let http;
 
 // preload task
 let preloadTimer;
@@ -30,17 +28,10 @@ class Http {
         preloadTimer = setTimeout(preloadTask, PRELOAD_TIMEOUT);
       },
       success: (data) => {
-        data = JSON.parse(data);
-
-        if (data.errCode === 0) {
-          success(data);
-        } else {
-          app.alert(data.errMsg);
-        }
+        successHandler(data, success);
       },
-      error: () => {
-        app.hidePreloader();
-        app.alert(MSG.TIMEOUT);
+      error: (xhr, status) => {
+        errorHandler(xhr, status);
       },
       complete: () => {
         clearTimeout(preloadTimer);
@@ -58,17 +49,10 @@ class Http {
         preloadTimer = setTimeout(preloadTask, PRELOAD_TIMEOUT);
       },
       success: (data) => {
-        data = JSON.parse(data);
-
-        if (data.errCode === 0) {
-          success(data);
-        } else {
-          app.alert(data.errMsg);
-        }
+        successHandler(data, success);
       },
-      error: () => {
-        app.hidePreloader();
-        app.alert(MSG.TIMEOUT);
+      error: (xhr, status) => {
+        errorHandler(xhr, status);
       },
       complete: () => {
         clearTimeout(preloadTimer);
@@ -77,6 +61,32 @@ class Http {
   }
 }
 
-http = new Http;
+function successHandler(data, callback) {
+  data = JSON.parse(data);
+
+  if (data.errCode === 0) {
+    callback(data);
+  } else {
+    app.alert(data.errMsg);
+  }
+}
+
+function errorHandler(xhr, status) {
+  app.hidePreloader();
+
+  if (status === 0) {
+    app.alert(MSG.NETWORK_ERROR);
+    clearTimeout(preloadTimer);
+  }
+  else if (status === 'timeout') {
+    app.alert(MSG.TIMEOUT);
+  }
+  else {
+    app.alert(MSG.SERVER_ERROR);
+  }
+}
+
+// instance of Http Class
+const http = new Http;
 
 module.exports = http;

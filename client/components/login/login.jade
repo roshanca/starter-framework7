@@ -1,10 +1,13 @@
 mixin navbar
   .navbar
     .navbar-inner
-      .left.sliding
+      .left
         a.back.icon-only(href='#')
           i.icon.icon-back
       .center.sliding Welcome
+      .right
+        a(href="#").open-panel.link.icon-only
+          i.icon.icon-bars
 
 template#login
   if (ios)
