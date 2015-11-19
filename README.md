@@ -1,6 +1,8 @@
 starter-framework7
 ===
 
+![](https://raw.githubusercontent.com/roshanca/starter-framework7/master/public/img/logo.png)
+
 A starter project structure for framework7 app, using Node and Express for server rendering, the MVVM lib -- Vue.js is optional, but for recommended, because it could help us to improve building modern web interfaces simply and efficiently.
 
 It is not only a template boilerplate, but a toolkit for development, which is made by a series of custom tasks written in js, and some useful middlewares for express, for the purpose of getting rid of the traditional gulp.
