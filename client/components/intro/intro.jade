@@ -10,5 +10,12 @@ template#intro
     if (!ios)
       +navbar
     .page-content
-      .content-block
-        a#link(href='#' @click='redirect') Login Page
+      .swiper-container
+        .swiper-wrapper
+          .swiper-slide
+            include card-f7
+          .swiper-slide
+            include card-vue
+          .swiper-slide
+            include card-starter
+        .swiper-pagination

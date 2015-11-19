@@ -10,3 +10,25 @@
   width: 50px;
   height: 50px;
 }
+.swiper-container {
+  height: 100%;
+}
+.swiper-slide span {
+  display: block;
+  text-align: center;
+}
+.card img {
+  display: block;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+}
+.card img.logo {
+  width: 303px;
+  height: 100px;
+}
+.card img.smaller {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+}
