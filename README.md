@@ -3,7 +3,7 @@ starter-framework7
 
 ![](https://raw.githubusercontent.com/roshanca/starter-framework7/master/public/img/logo.png)
 
-A starter project structure for framework7 app, using Node and Express for server rendering, the MVVM lib -- Vue.js is optional, but for recommended, because it could help us to improve building modern web interfaces simply and efficiently.
+A starter project structure for framework7 app, using Node and Express for server rendering, the MVVM lib -- Vue.js is optional, but highly recommended, because it could help us to improve building modern web interfaces simply and efficiently.
 
 It is not only a template boilerplate, but a toolkit for development, which is made by a series of custom tasks written in js, and some useful middlewares for express, for the purpose of getting rid of the traditional gulp.
 
@@ -19,7 +19,7 @@ Feature
 + Contain both iOS and Material Themes in single app.
 + All pages stored locally, so don't need additional xhr to load page.
 + Encapsulate `get` and `post` methods for fetching server data with comprehensive response handler (timeout, error etc).
-+ Reusable componenets powered by Vue, simple and neat code which focus on the business logic.
++ Reusable components powered by Vue which made code simple and neat, more focus on the business logic.
 + Isomorphic js according to Babel (it seems not very useful so far).
 
 Running
