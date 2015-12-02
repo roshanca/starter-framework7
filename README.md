@@ -1,6 +1,8 @@
 starter-framework7
 ===
 
+[![Build Status](https://semaphoreci.com/api/v1/projects/294d8e40-fb04-4dab-890a-2ebb7dc8fd4b/620695/badge.svg)](https://semaphoreci.com/roshanca/starter-framework7)
+
 ![](https://raw.githubusercontent.com/roshanca/starter-framework7/master/public/img/logo.png)
 
 A starter project structure for framework7 app, using Node and Express for server rendering, the MVVM lib -- Vue.js is optional, but highly recommended, because it could help us to improve building modern web interfaces simply and efficiently.
