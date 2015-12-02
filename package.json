@@ -1,6 +1,6 @@
 {
   "name": "starter-framework7",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A starter project structure for framework7 app",
   "main": "index.js",
   "author": "roshanca <wwj1983@gmail.com>",
@@ -14,23 +14,27 @@
   },
   "scripts": {
     "updateF7": "node tasks/updateF7",
-    "start": "nodemon tasks/server"
+    "start": "nodemon tasks/server",
+    "lint": "node_modules/.bin/eslint ./client/*.js"
   },
   "dependencies": {
     "autoprefixer-stylus": "^0.8.1",
     "body-parser": "^1.14.1",
     "express": "^4.13.3",
     "express-ua": "0.0.9",
-    "framework7": "^1.3.1",
+    "framework7": "^1.3.5",
     "jade": "^1.11.0",
     "stylus": "^0.52.4",
-    "vue": "^1.0.4"
+    "vue": "^1.0.10"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.0.15",
     "babelify": "^7.2.0",
     "browserify-middleware": "^7.0.0",
     "del": "^2.0.2",
+    "eslint": "^1.10.3",
+    "eslint-config-airbnb": "^1.0.2",
+    "eslint-plugin-babel": "^3.0.0",
     "ncp": "^2.0.0"
   }
 }

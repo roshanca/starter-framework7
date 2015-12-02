@@ -1,5 +1,3 @@
-'use strict';
-
 const Router = require('./routes');
 const device = Framework7.prototype.device;
 

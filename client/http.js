@@ -1,5 +1,3 @@
-'use strict';
-
 // ajax timeout set, in milliseconds
 const TIMEOUT = 6000;
 
@@ -77,11 +75,9 @@ function errorHandler(xhr, status) {
   if (status === 0) {
     app.alert(MSG.NETWORK_ERROR);
     clearTimeout(preloadTimer);
-  }
-  else if (status === 'timeout') {
+  } else if (status === 'timeout') {
     app.alert(MSG.TIMEOUT);
-  }
-  else {
+  } else {
     app.alert(MSG.SERVER_ERROR);
   }
 }

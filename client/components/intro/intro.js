@@ -1,5 +1,3 @@
-'use strict';
-
 const Vue = require('vue');
 
 module.exports = {

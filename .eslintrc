@@ -1,0 +1,46 @@
+{
+  "extends": ["eslint-config-airbnb/base"],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "ecmaFeatures": {
+    "experimentalObjectRestSpread": true
+  },
+  "plugins": [
+    "babel"
+  ],
+  "globals": {
+    "app": true,
+    "Framework7": true,
+    "Dom7": true,
+    "Template7": true,
+    "$$": true,
+    "mainView": true
+  },
+  "rules": {
+    "constructor-super": 2,
+    "comma-dangle": 0,
+    "func-names": 0,
+    "guard-for-in": 0,
+    "one-var": [2, { "initialized": "never" }],
+    "prefer-const": 0,
+    "key-spacing": 0,
+    "no-eq-null": 0,
+    "no-else-return": 0,
+    "no-param-reassign": 0,
+    "no-this-before-super": 2,
+    "no-undef": 2,
+    "no-console": 0,
+    "no-use-before-define": 0,
+    "no-unused-vars": [2, { "vars": "all", "args": "none" }],
+    "babel/object-shorthand": 0,
+    "space-after-keywords": 0,
+    "space-before-blocks": 0,
+    "space-before-function-paren": 0,
+    "spaced-comment": 0,
+    "vars-on-top": 0,
+    "id-length": 0
+  }
+}

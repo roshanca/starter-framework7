@@ -24,8 +24,8 @@
   margin: 0 auto;
 }
 .card img.logo {
-  width: 303px;
-  height: 100px;
+  width: 90%;
+  height: auto;
 }
 .card img.smaller {
   display: inline-block;

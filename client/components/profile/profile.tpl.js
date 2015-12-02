@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = `
 <div class="list-block media-list">
     <ul>

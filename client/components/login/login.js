@@ -1,5 +1,3 @@
-'use strict';
-
 const Vue = require('vue');
 const http = require('../../http');
 const loginTemplate = require('./login.tpl');
@@ -43,7 +41,7 @@ module.exports = {
           } else {
             const postData = {
               account: this.user.email,
-              password: this.user.password
+              password: btoa(this.user.password)
             };
 
             http.post('/api/login', postData, (data) => {
