@@ -1,5 +1,3 @@
-'use strict';
-
 const components = new Map();
 
 components.set('intro', require('./components/intro/intro'));

@@ -1,5 +1,3 @@
-'use strict';
-
 const {log} = require('./utils');
 const components = require('./components');
 

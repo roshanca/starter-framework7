@@ -1,5 +1,3 @@
-'use strict';
-
 const Vue = require('vue');
 const http = require('../../http');
 const loginTemplate = require('./login.tpl');
