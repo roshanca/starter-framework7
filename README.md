@@ -28,7 +28,6 @@ Running
 ----
 
 ### Install dependencies
-    npm install -g nodemon
     npm install
 
 ### Build
