@@ -1,4 +1,5 @@
 const Router = require('./routes');
+
 const device = Framework7.prototype.device;
 
 window.$$ = Dom7;
@@ -11,7 +12,7 @@ if (!device.ios) {
 
 // initialize framework7 app
 window.app = new Framework7({
-  material: device.ios ? false : true,
+  material: !device.ios,
   modalTitle: 'System'
 });
 

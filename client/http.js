@@ -18,9 +18,9 @@ let preloadTask = () => {
 };
 
 class Http {
-  get(url, success) {
+  static get(url, success) {
     $$.ajax({
-      url: url,
+      url,
       method: 'GET',
       beforeSend: () => {
         preloadTimer = setTimeout(preloadTask, PRELOAD_TIMEOUT);
@@ -37,9 +37,9 @@ class Http {
     });
   }
 
-  post(url, postData, success) {
+  static post(url, postData, success) {
     $$.ajax({
-      url: url,
+      url,
       method: 'POST',
       data: postData,
       timeout: TIMEOUT,
@@ -83,6 +83,6 @@ function errorHandler(xhr, status) {
 }
 
 // instance of Http Class
-const http = new Http;
+const http = new Http();
 
 module.exports = http;

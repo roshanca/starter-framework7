@@ -7,6 +7,6 @@ function log(msg) {
 }
 
 module.exports = {
-  format: format,
-  log: log
+  format,
+  log
 };
